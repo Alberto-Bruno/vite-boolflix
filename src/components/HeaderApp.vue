@@ -35,7 +35,7 @@ export default {
     padding: 0 2rem;
 
     h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         text-align: center;
         padding: 1rem;
         color: red;
@@ -53,7 +53,7 @@ export default {
         }
 
         label {
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
 
         input {

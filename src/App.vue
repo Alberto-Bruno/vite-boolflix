@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       store,
-      apiKey: 'c065d34d7a17aa24d73d1521ae673433',
+      apiKey: 'ddceeea8539d720960b15fbba02762c6',
       moviesApiUri: 'https://api.themoviedb.org/3/search/movie?',
       seriesApiUri: 'https://api.themoviedb.org/3/search/tv?'
     }
