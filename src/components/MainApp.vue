@@ -45,19 +45,19 @@ export default {
             <li v-for="moviesItem in store.moviesList" class="single-card">
                 <img :src="this.img + moviesItem.poster_path">
                 <div class="details">
-                    <h2>Title: {{ moviesItem.title }}</h2>
-                    <h3>Original Title:{{ moviesItem.original_title }}</h3>
+                    <h2> {{ moviesItem.title }}</h2>
+                    <h3> {{ moviesItem.original_title }}</h3>
                     <h4>Language: {{ moviesItem.original_language }}
                         <lang-flag :iso="moviesItem.original_language" />
                     </h4>
-                    <p>Rating:
+                    <p>
                         <font-awesome-icon icon="fa-solid fa-star" v-for=" n in getRating(moviesItem.vote_average)" />
                         <span v-if="getRating(moviesItem.vote_average) == 0">No ratings found</span>
                     </p>
                     <p>
                         Overview: {{ moviesItem.overview }}
                     </p>
-                    <p> Genre:
+                    <p> Genere:
                         <a href="#" v-for="genre in moviesItem.genre_ids">
                             {{ getGenreName(genre) }}
                         </a>
@@ -79,12 +79,12 @@ export default {
                     <h4>Language: {{ seriesItem.original_language }}
                         <lang-flag :iso="seriesItem.original_language" />
                     </h4>
-                    <p>Rating:
+                    <p>
                         <font-awesome-icon icon="fa-solid fa-star" v-for=" n in getRating(seriesItem.vote_average)" />
                         <span v-if="getRating(seriesItem.vote_average) == 0">No ratings found</span>
                     </p>
                     <p>Overview: {{ seriesItem.overview }} </p>
-                    <p> Genre:
+                    <p> Genere:
                         <a href="#" v-for="genre in seriesItem.genre_ids">
                             {{ getGenreName(genre) }}
                         </a>
