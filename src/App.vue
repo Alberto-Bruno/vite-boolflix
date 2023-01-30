@@ -13,7 +13,8 @@ export default {
       store,
       apiKey: 'ddceeea8539d720960b15fbba02762c6',
       moviesApiUri: 'https://api.themoviedb.org/3/search/movie?',
-      seriesApiUri: 'https://api.themoviedb.org/3/search/tv?'
+      seriesApiUri: 'https://api.themoviedb.org/3/search/tv?',
+      genreList: 'https://api.themoviedb.org/3/genre/movie/list?',
     }
   },
   methods: {
@@ -48,6 +49,17 @@ export default {
         })
     },
 
+    getGenres() {
+      axios.get(this.genreList, {
+        params: {
+          api_key: this.apiKey,
+        }
+      })
+        .then((response) => {
+          this.store.genresList = response.data.genres;
+        })
+    },
+
     searchAll(searchedText) {
       this.getSeries(searchedText);
       this.getMovies(searchedText);
@@ -57,6 +69,7 @@ export default {
   created() {
     this.getMovies();
     this.getSeries();
+    this.getGenres();
   },
 }
 </script>
